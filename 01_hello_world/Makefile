@@ -2,7 +2,7 @@
 CFLAGS=-Wall -pipe -g
 
 program: hello_world.o
-	${CC} ${CFLAGS} -o ${.TARGET} ${.ALLSRC}
+	gcc -o $@ hello_world.o
 
 clean:
 	rm -f program *.o *.core
