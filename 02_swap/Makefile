@@ -1,8 +1,8 @@
 
 CFLAGS=-Wall -pipe -g
 
-program: hello_world.o
-	$(CC) $(CFLAGS) -o $@ hello_world.o
+program: swap.o
+	$(CC) $(CFLAGS) -o $@ swap.o
 
 clean:
 	rm -f program *.o *.core
