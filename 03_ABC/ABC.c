@@ -13,11 +13,12 @@ void hexa(unsigned char *p) {
 
 int main(int argc, char **argv)
 {
-	unsigned char abc[] = "ABC";
-	abc[1] = 0xff;
+	//unsigned char abc[] = "ABC";
+	int a = 0xaabbccdd;
+	//abc[1] = 0xff;
 
-	hexa(&abc[0]);
-	printf("%s: ", abc);
+	hexa((unsigned char *)&a);
+	//printf("%s: ", abc);
 
 
 	return 0;
