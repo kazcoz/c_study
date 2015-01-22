@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 
-void hexa(char *p) {
+void hexa(unsigned char *p) {
 	int i;
 	
 	for(i = 0; i < 16; i++) {
@@ -13,7 +13,8 @@ void hexa(char *p) {
 
 int main(int argc, char **argv)
 {
-	char abc[] = "ABC";
+	unsigned char abc[] = "ABC";
+	abc[1] = 0xff;
 
 	hexa(&abc[0]);
 	printf("%s: ", abc);
