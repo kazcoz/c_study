@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 struct person {
-	char name;
-	char phone;
-	char mail;
+	char name[32];
+	char phone[11];
+	char mail[32];
 };
 
 int main(int argc, char **argv)
