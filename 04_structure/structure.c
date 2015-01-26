@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 struct person {
 	char name[32];
@@ -20,17 +21,21 @@ int main(int argc, char **argv)
 
 	FILE *fp;
 
-	fp = fopen("address.txt", "w");
+	if((fp = fopen("/root/address.txt", "w")) != NULL) {
 
-	int i = 0;
-	for(i = 0; i < 3; i++) {
-		fprintf(fp, "No.%d: \n", i + 1);
-		fprintf(fp, " name: %s\n", person_data[i].name);
-		fprintf(fp, "phone: %s\n", person_data[i].phone);
-		fprintf(fp, " mail: %s\n\n", person_data[i].mail);
+		int i = 0;
+		for(i = 0; i < 3; i++) {
+			fprintf(fp, "No.%d: \n", i + 1);
+			fprintf(fp, " name: %s\n", person_data[i].name);
+			fprintf(fp, "phone: %s\n", person_data[i].phone);
+			fprintf(fp, " mail: %s\n\n", person_data[i].mail);
+		}
+		fclose(fp);
+	} else {
+		printf("ERROR: Can't open file.\n");
+		exit(1);
 	}
 
-	fclose(fp);
 
 	return 0;
 }
