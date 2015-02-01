@@ -3,12 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-void change_ul(unsigned char *c) {
-	if(*c >= 97 && *c <= 122) {
-		*c -= 32;
-	}
-}
-
 struct person {
 	char name[32];
 	char phone[11];
@@ -42,9 +36,14 @@ int main(int argc, char **argv)
 		exit(1);
 	}*/
 
+	struct person *cul;
 
 	printf("%s\n", person_data[0].name);
-	change_ul((unsigned char *)&person_data[0].name);
+	cul = person_data;
+
+	if(*cul->name >= 97 && *cul->name <= 122) {
+		*cul->name -= 32;
+	}
 	printf("%s\n", person_data[0].name);
 
 
