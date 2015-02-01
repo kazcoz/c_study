@@ -39,10 +39,12 @@ int main(int argc, char **argv)
 	struct person *cul;
 
 	printf("%s\n", person_data[0].name);
+	printf("%x\n", 'A');
+	printf("%x\n", 'a');
 	cul = person_data;
 
-	if(*cul->name >= 97 && *cul->name <= 122) {
-		*cul->name -= 32;
+	if(*cul->name >= 'a' && *cul->name <= 'z') {
+		*cul->name -= ('a' - 'A');
 	}
 	printf("%s\n", person_data[0].name);
 
