@@ -15,6 +15,13 @@ struct person person_data[3] = {
 	{"K", "090135246", "kuwata@example.com"},
 };
 
+void change_lu(struct person *sp) {
+	if(sp->name[0] >= 'a' && sp->name[0] <= 'z') {
+		sp->name[0] -= ('a' - 'A');
+	}
+	
+}
+
 int main(int argc, char **argv)
 {
 	//strcpy(person_data[0].name, "Kazumi SHIGENO");
@@ -36,16 +43,10 @@ int main(int argc, char **argv)
 		exit(1);
 	}*/
 
-	struct person *cul;
-
 	printf("%s\n", person_data[0].name);
-	printf("%x\n", 'A');
-	printf("%x\n", 'a');
-	cul = person_data;
 
-	if(*cul->name >= 'a' && *cul->name <= 'z') {
-		*cul->name -= ('a' - 'A');
-	}
+	change_lu(&person_data[0]);
+
 	printf("%s\n", person_data[0].name);
 
 
