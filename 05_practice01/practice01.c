@@ -16,6 +16,10 @@ int main(int argc, char **argv)
 	char str[7];
 	int b;
 
+	printf("%p\n", &p.a);
+	printf("%p\n", &p.str);
+	printf("%p\n\n", &p.b);
+
 	printf("%p\n", &a);
 	printf("%p\n", &str);
 	printf("%p\n", &b);
